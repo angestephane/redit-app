@@ -1,0 +1,37 @@
+<div class="container">
+  <div
+    class="flex justify-content-start flex-wrap card-container w-30rem h-16rem mt-3"
+  >
+    <div
+      class="flex align-items-center justify-content-center w-8rem h-6rem bg-blue-500 font-bold text-white border-round m-2"
+    >
+      <div class="ui statistic">
+        <div class="value">
+          {{ vote }}
+        </div>
+        <div class="label">point</div>
+      </div>
+    </div>
+    <div
+      class="flex flex-column card-container justify-content-between text-white w-20rem h-6rem border-round m-2"
+    >
+      <div class="flex justify-content-center">
+        <a class="ui header" href="{{ link }}">{{ title }}</a>
+      </div>
+      <div class="flex justify-content-around flex-wrap">
+        <ul class="flex list-none p-0">
+          <li class="px-2">
+            <a href (click)="voteUp()"
+              ><i class="arrow up icon"></i> lien utile</a
+            >
+          </li>
+          <li class="px-2">
+            <a href (click)="voteDown()"
+              ><i class="arrow down icon"></i>lien inutil</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
