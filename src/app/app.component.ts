@@ -35,4 +35,8 @@ export class AppComponent {
     link.value = '';
     return false;
   }
+
+  sortArticle(): Array<Article> {
+    return this.articles.sort((a: Article, b: Article) => b.vote - a.vote);
+  }
 }
