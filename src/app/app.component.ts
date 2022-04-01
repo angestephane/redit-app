@@ -36,6 +36,12 @@ export class AppComponent {
     return false;
   }
 
+  /**
+   * TODO : Ajout d'un systeme de trie selon le score
+   * ! lien pour les tries : https://mzl.la/3ITo01i
+   * ! lien pour les fonctions flechées
+   * @returns : un tableau d'article trié
+   */
   sortArticle(): Array<Article> {
     return this.articles.sort((a: Article, b: Article) => b.vote - a.vote);
   }
