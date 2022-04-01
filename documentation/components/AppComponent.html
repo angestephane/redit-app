@@ -148,6 +148,9 @@
                             <li>
                                 <a href="#addLink" >addLink</a>
                             </li>
+                            <li>
+                                <a href="#sortArticle" >sortArticle</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -283,6 +286,43 @@ TODO : recupère les données saisis dans le formulaire</p>
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortArticle"></a>
+                    <span class="name">
+                        <span ><b>sortArticle</b></span>
+                        <a href="#sortArticle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sortArticle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/app.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Article.html" target="_self" >Array&lt;Article&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
     <section>
     
@@ -389,6 +429,10 @@ export class AppComponent {
     link.value &#x3D; &#x27;&#x27;;
     return false;
   }
+
+  sortArticle(): Array&lt;Article&gt; {
+    return this.articles.sort((a: Article, b: Article) &#x3D;&gt; b.vote - a.vote);
+  }
 }
 </code></pre>
     </div>
@@ -422,7 +466,7 @@ export class AppComponent {
   &lt;/div&gt;
   &lt;div&gt;
     &lt;app-article
-      *ngFor&#x3D;&quot;let article of articles; index as id&quot;
+      *ngFor&#x3D;&quot;let article of sortArticle(); index as id&quot;
       [article]&#x3D;&quot;article&quot;
     &gt;&lt;/app-article&gt;
   &lt;/div&gt;
@@ -466,7 +510,7 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="grid col-12 md:col-8 col-offset-2 mt-4">  <div class="p-fluid col-12 md:col-7">    <form>      <div class="mb-3 field col-12 md:col-12">        <span class="p-float-label">          <input type="text" id="inputtext" pInputText #newTitle />          <label for="inputtext">Title : </label>        </span>      </div>      <div class="mb-3 field col-12 md:col-12">        <span class="p-float-label">          <input type="text" id="inputtext" pInputText #newLink />          <label for="inputtext">Link : </label>        </span>      </div>      <div class="col-12">        <button          type="submit"          class="btn btn-primary"          (click)="addLink(newTitle, newLink)"        >          Soumettre le lien        </button>      </div>    </form>  </div>  <div>    <app-article      *ngFor="let article of articles; index as id"      [article]="article"    ></app-article>  </div>  <router-outlet></router-outlet></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="grid col-12 md:col-8 col-offset-2 mt-4">  <div class="p-fluid col-12 md:col-7">    <form>      <div class="mb-3 field col-12 md:col-12">        <span class="p-float-label">          <input type="text" id="inputtext" pInputText #newTitle />          <label for="inputtext">Title : </label>        </span>      </div>      <div class="mb-3 field col-12 md:col-12">        <span class="p-float-label">          <input type="text" id="inputtext" pInputText #newLink />          <label for="inputtext">Link : </label>        </span>      </div>      <div class="col-12">        <button          type="submit"          class="btn btn-primary"          (click)="addLink(newTitle, newLink)"        >          Soumettre le lien        </button>      </div>    </form>  </div>  <div>    <app-article      *ngFor="let article of sortArticle(); index as id"      [article]="article"    ></app-article>  </div>  <router-outlet></router-outlet></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleComponent', 'selector': 'app-article'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
