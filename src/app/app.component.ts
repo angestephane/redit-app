@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Article } from './article/article.model';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'redit-app';
 
+  articles: Array<Article>;
+  constructor() {
+    this.articles = [
+      new Article('Angular 2', 'http://angular.io', 10),
+      new Article('Fullstack', 'http://fullstack.io', 2),
+      new Article('Angular Homepage', 'http://angular.io', 1),
+    ];
+  }
+
   /**
    * addLink
-   * TODO :
+   * TODO : recupère les données saisis dans le formulaire
    *
    * ?méthode publique
    *
